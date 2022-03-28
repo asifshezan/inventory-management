@@ -291,32 +291,188 @@
 
 
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                    <i class="bx bx-calendar"></i>
-                                    <span key="t-dashboards">Calendars</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="calendar.html" key="t-tui-calendar">TUI Calendar</a></li>
-                                    <li><a href="calendar-full.html" key="t-full-calendar">Full Calendar</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-store"></i>
-                                    <span key="t-ecommerce">Ecommerce</span>
+                                    <i class="bx bx-list-ul"></i>
+                                    <span>Product</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                                    <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
+                                    <li><a href="calendar.html">Caregory</a></li>
+                                    <li><a href="calendar-full.html">Product List</a></li>
+                                    <li><a href="calendar.html">Add Product</a></li>
+                                    <li><a href="calendar.html">Print Barcode</a></li>
+                                    <li><a href="calendar.html">Adjustment List</a></li>
+                                    <li><a href="calendar.html">Add Adjustment</a></li>
+                                    <li><a href="calendar.html">Stock Count</a></li>
+
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Crypto</span>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-credit-card"></i>
+                                    <span key="t-ecommerce">Purchase</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="ecommerce-products.html">Purchase List</a></li>
+                                    <li><a href="ecommerce-product-detail.html">Add Purchase</a></li>
+                                    <li><a href="ecommerce-products.html">Import Purchase by CSV</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-cart"></i>
+                                    <span>Sale</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="calendar.html">Sale List</a></li>
+                                    <li><a href="calendar-full.html">POS</a></li>
+                                    <li><a href="calendar.html">Add Sale</a></li>
+                                    <li><a href="calendar.html">Import Sale by CSV</a></li>
+                                    <li><a href="calendar.html">Gift Card List</a></li>
+                                    <li><a href="calendar.html">Coupon List</a></li>
+                                    <li><a href="calendar.html">Delivery List</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-wallet-alt"></i>
+                                    <span key="t-ecommerce">Expense</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="ecommerce-products.html">Expense Category</a></li>
+                                    <li><a href="ecommerce-product-detail.html">Expense List</a></li>
+                                    <li><a href="ecommerce-products.html">Add Expense</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-detail"></i>
+                                    <span key="t-ecommerce">Quotation</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="ecommerce-products.html">Quotation List</a></li>
+                                    <li><a href="ecommerce-product-detail.html">Add Quotation</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-transfer-alt"></i>
+                                    <span key="t-ecommerce">Transfer</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="ecommerce-products.html">Transfer List</a></li>
+                                    <li><a href="ecommerce-product-detail.html">Add Transfer</a></li>
+                                    <li><a href="ecommerce-products.html">Import Transfer by CSV</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-rotate-left"></i>
+                                    <span key="t-ecommerce">Return</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="ecommerce-products.html">Sale</a></li>
+                                    <li><a href="ecommerce-product-detail.html">Purchase</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-briefcase-alt-2"></i>
+                                    <span>Accounting</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="calendar.html">Account List</a></li>
+                                    <li><a href="calendar.html">Add Account</a></li>
+                                    <li><a href="calendar.html">Money Transfer</a></li>
+                                    <li><a href="calendar.html">Balance Sheet</a></li>
+                                    <li><a href="calendar.html">Account Statement</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="dripicons-user-group"></i>
+                                    <span>HRM</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="calendar.html">Department</a></li>
+                                    <li><a href="calendar.html">Employee</a></li>
+                                    <li><a href="calendar.html">Attendance</a></li>
+                                    <li><a href="calendar.html">Payroll</a></li>
+                                    <li><a href="calendar.html">Holiday</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bx-user"></i>
+                                    <span>People</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="calendar.html">User List</a></li>
+                                    <li><a href="calendar.html">Add User</a></li>
+                                    <li><a href="calendar.html">Customer List</a></li>
+                                    <li><a href="calendar.html">Add Customer</a></li>
+                                    <li><a href="calendar.html">Biller List</a></li>
+                                    <li><a href="calendar.html">Add Biller</a></li>
+                                    <li><a href="calendar.html">Supplier List</a></li>
+                                    <li><a href="calendar.html">Add Supplier</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bxs-report"></i>
+                                    <span>Reports</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="calendar.html">Summary Report</a></li>
+                                    <li><a href="calendar.html">Best Seller</a></li>
+                                    <li><a href="calendar.html">Product Report</a></li>
+                                    <li><a href="calendar.html">Daily Sale</a></li>
+                                    <li><a href="calendar.html">Monthly Sale</a></li>
+                                    <li><a href="calendar.html">Daily Purchase</a></li>
+                                    <li><a href="calendar.html">Monthly Purchase</a></li>
+                                    <li><a href="calendar.html">Sale Report</a></li>
+                                    <li><a href="calendar.html">Payment Report</a></li>
+                                    <li><a href="calendar.html">Purchase Report</a></li>
+                                    <li><a href="calendar.html">Warehouse Report</a></li>
+                                    <li><a href="calendar.html">Warehouse Stock Chart</a></li>
+                                    <li><a href="calendar.html">Product Quantity Alert</a></li>
+                                    <li><a href="calendar.html">User Report</a></li>
+                                    <li><a href="calendar.html">Customer Report</a></li>
+                                    <li><a href="calendar.html">Supplier Report</a></li>
+                                    <li><a href="calendar.html">Due Report</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="has-arrow waves-effect">
+                                    <i class="bx bxs-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="calendar.html">Role Permission</a></li>
+                                    <li><a href="calendar.html">Discount Plan</a></li>
+                                    <li><a href="calendar.html">Discout</a></li>
+                                    <li><a href="calendar.html">Send Notification</a></li>
+                                    <li><a href="calendar.html">Warehouse</a></li>
+                                    <li><a href="calendar.html">Customer Group</a></li>
+                                    <li><a href="calendar.html">Brand</a></li>
+                                    <li><a href="calendar.html">Unit</a></li>
+                                    <li><a href="calendar.html">Currency</a></li>
+                                    <li><a href="calendar.html">Tax</a></li>
+                                    <li><a href="calendar.html">User Profile</a></li>
+                                    <li><a href="calendar.html">Create SMS</a></li>
+                                    <li><a href="calendar.html">Backup Database</a></li>
+                                    <li><a href="calendar.html">General Setting</a></li>
+                                    <li><a href="calendar.html">Mail Setting</a></li>
+                                    <li><a href="calendar.html">Reward Point Setting</a></li>
+                                    <li><a href="calendar.html">SMS Setting</a></li>
+                                    <li><a href="calendar.html">POS Setting</a></li>
+                                    <li><a href="calendar.html">HRM Setting</a></li>
+                                </ul>
+                            </li>
 
                         <form action="{{ route('logout') }}" method="POST" id="logout-form"></form>
                             <li>
