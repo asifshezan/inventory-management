@@ -19,6 +19,7 @@
         <link href="{{ asset('contents/admin') }}/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{ asset('contents/admin') }}/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('contents/admin') }}/css/style.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -402,8 +403,8 @@
                                     <span>People</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="calendar.html">User List</a></li>
-                                    <li><a href="calendar.html">Add User</a></li>
+                                    <li><a href="{{ url('dashboard/user') }}">User List</a></li>
+                                    <li><a href="{{ url('dashboard/user/add') }}">Add User</a></li>
                                     <li><a href="calendar.html">Customer List</a></li>
                                     <li><a href="calendar.html">Add Customer</a></li>
                                     <li><a href="calendar.html">Biller List</a></li>
@@ -528,6 +529,8 @@
 
         <!-- App js -->
         <script src="{{ asset('contents/admin') }}/js/app.js"></script>
+        <script src="{{ asset('contents/admin') }}/js/custom.js"></script>
+
     </body>
 
 </html>

@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+  }
+
+  img{
+    border: 0px;
+  }
+
+  ul, ol{
+    list-style-type: none;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  body{
+
+  }
+
+  .card_header{
+
+  }
+
+  .card_header_title{
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .card_header_title i{
+    margin-right: 5px;
+  }
+
+  .card_header_btn{
+    text-align: right;
+  }
+
+  .chb_btn{
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .chb_btn i{
+    margin-right: 3px;
+  }
+
+  .card_body{
+
+  }
+
+  .card_footer{
+
+  }
+
+  .col_form_label{
+    text-align: right;
+    padding-right: 0px!important;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .form_control{
+    font-size: 13px;
+  }
+
+  .req_star{
+    color: red;
+  }
+
+  .custom_table{
+
+  }
+
+  .custom_view_table{
+
+  }
+
+  .custom_view_table tr{
+
+  }
+
+  .custom_view_table tr td{
+
+  }
+
+  .custom_view_table tr td:first-child{
+    width: 30%;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .custom_view_table tr td:last-child{
+    width: 69%;
+    text-align: left;
+    font-weight: 400;
+  }
+  .has-error span.error{
+      color: red;
+      font-size: 12px;
+      margin-top: 10px;
+      font-style: italic;
+      font-weight: bold;
+  }
