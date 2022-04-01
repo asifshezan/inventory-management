@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('active')->default(1);
+            $table->string('slug')->unique();
             $table->integer('role');
             $table->string('photo',50)->nullable();
             $table->integer('status')->default(1);

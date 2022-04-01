@@ -21,11 +21,12 @@
   }
 
   .card_header{
-
+  background-color: rgb(18, 38, 67);
   }
 
   .card_header_title{
-    font-size: 15px;
+    padding-top: 5px;
+    font-size: 16px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 500;
@@ -58,10 +59,11 @@
   }
 
   .col_form_label{
-    text-align: right;
+    text-align: left;
     padding-right: 0px!important;
+    margin-bottom: -5px;;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .form_control{
@@ -70,6 +72,13 @@
 
   .req_star{
     color: red;
+  }
+  .check_input{
+      margin-top: 10px;
+  }
+  .check_label{
+      font-size: 15px;
+      font-weight: 600;
   }
 
   .custom_table{

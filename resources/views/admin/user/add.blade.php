@@ -1,19 +1,36 @@
 @extends('layouts.admin')
 @section('content')
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Dashboards</a></li>
+                    {{-- <li class="breadcrumb-item active">Dashboard</li> --}}
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
 <div class="row">
     <div class="col-md-12">
         <form method="post" action="{{url('dashboard/user/submit')}}" enctype="multipart/form-data">
         @csrf
         <div class="card">
-            <div class="card-header card_header bg-dark">
+            <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
                 <i class="fab fa-gg-circle"></i>Add User Information</div>
                 <div class="col-md-4 card_header_btn">
-                <a class="btn btn-sm btn-secondary chb_btn" href="{{url('dashboard/user')}}"><i class="fas fa-th"></i> All User</a>
+                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{url('dashboard/user')}}"><i class="fas fa-th"></i> All User</a>
                 </div>
             </div>
-            </div>
+        </div>
             <div class="card-body card_body">
             @if(Session::has('success'))
                 <script>
@@ -25,71 +42,50 @@
                 swal({ title: "Opps!", text: "{{Session::get('error')}}", icon: "error", timer: 10000});
                 </script>
             @endif
-            <div class="row mb-3 {{$errors->has('name') ? ' has-error':''}}">
-                <label class="col-sm-3 col-form-label col_form_label">Name<span class="req_star">*</span>:</label>
-                <div class="col-sm-7">
-                <input type="text" class="form-control form_control" id="" name="name" value="{{old('name')}}">
-                @if ($errors->has('name'))
-                    <span class="error">{{ $errors->first('name') }}</span>
-                @endif
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <div class="form-group mb-4">
+                            <label class="col-sm-3 col-form-label col_form_label">UserName<span class="req_star">*</span></label>
+                            <input type="text" class="form-control form_control" name="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-sm-3 col-form-label col_form_label">Password<span class="req_star">*</span></label>
+                            <input type="password" class="form-control form_control" name="password" value="{{ old('password') }}">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-sm-3 col-form-label col_form_label">Phone<span class="req_star">*</span></label>
+                            <input type="text" class="form-control form_control" name="phone" value="{{ old('phone') }}">
+
+                        </div>
+                        <div class="form-group mb-0">
+                            <label class="col-sm-3 col-form-label col_form_label">Photo</label>
+                            <input class="form-control form_control" type="file" name="pic">
+                        </div>
+                        <div class="form-check form-check-primary mb-3 check_input">
+                            <input class="form-check-input" type="checkbox" name="active" value="1">
+                            <label class="form-check-label check_label">Active</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mt-4 mt-lg-0">
+                        <div class="form-group mb-4">
+                            <label class="col-sm-3 col-form-label col_form_label">Email<span class="req_star">*</span></label>
+                            <input type="email" class="form-control form_control" name="email" value="{{ old('email') }}">
+
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-sm-3 col-form-label col_form_label">Confirm Password<span class="req_star">*</span></label>
+                            <input type="password" class="form-control form_control" name="password_confirmation" value="{{ old('password_confirmation') }}">
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label col_form_label">Phone:</label>
-                <div class="col-sm-7">
-                <input type="text" class="form-control form_control" id="" name="phone" value="{{old('phone')}}">
-                </div>
-            </div>
-            <div class="row mb-3 {{$errors->has('email') ? ' has-error':''}}">
-                <label class="col-sm-3 col-form-label col_form_label">Email<span class="req_star">*</span>:</label>
-                <div class="col-sm-7">
-                <input type="email" class="form-control form_control" id="" name="email" value="{{old('email')}}">
-                @if ($errors->has('email'))
-                    <span class="error">{{ $errors->first('email') }}</span>
-                @endif
-                </div>
-            </div>
-            <div class="row mb-3 {{$errors->has('password') ? ' has-error':''}}">
-                <label class="col-sm-3 col-form-label col_form_label">Password<span class="req_star">*</span>:</label>
-                <div class="col-sm-7">
-                <input type="password" class="form-control form_control" id="" name="password" value="">
-                @if ($errors->has('password'))
-                    <span class="error">{{ $errors->first('password') }}</span>
-                @endif
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label col_form_label">Confirm-password<span class="req_star">*</span>:</label>
-                <div class="col-sm-7">
-                <input type="password" class="form-control form_control" id="" name="password_confirmation" value="">
-                </div>
-            </div>
-            <div class="row mb-3 {{$errors->has('role') ? ' has-error':''}}">
-                <label class="col-sm-3 col-form-label col_form_label">User Role<span class="req_star">*</span>:</label>
-                <div class="col-sm-7">
-                @php
-                    $allRole=App\Models\Role::where('role_status',1)->orderBy('role_id','ASC')->get();
-                @endphp
-                <select class="form-control form_control" name="role">
-                    <option value="">select user role</option>
-                    @foreach($allRole as $urole)
-                    <option value="{{$urole->role_id}}">{{$urole->role_name}}</option>
-                    @endforeach
-                </select>
-                @if ($errors->has('role'))
-                    <span class="error">{{ $errors->first('role') }}</span>
-                @endif
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label col_form_label">Photo:</label>
-                <div class="col-sm-7">
-                <input type="file" name="pic">
-                </div>
-            </div>
-            </div>
-            <div class="card-footer card_footer bg-dark text-center">
-            <button class="btn btn-secondary" type="submit">REGISTRATION</button>
             </div>
         </div>
         </form>
