@@ -39,7 +39,10 @@
   .card_header_btn{
     text-align: right;
   }
-
+.form_label{
+    font-weight: 600;
+    font-size: 14px;
+}
   .chb_btn{
     text-transform: uppercase;
     font-size: 13px;
@@ -60,8 +63,7 @@
 
   .col_form_label{
     text-align: left;
-    padding-right: 0px!important;
-    margin-bottom: -5px;;
+    margin-bottom: -5px;
     font-weight: 600;
     font-size: 16px;
   }
@@ -73,8 +75,11 @@
   .req_star{
     color: red;
   }
+  .pera{
+      margin-top: -20px;
+  }
   .check_input{
-      margin-top: 10px;
+      font-size: 14px;
   }
   .check_label{
       font-size: 15px;

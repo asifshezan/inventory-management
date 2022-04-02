@@ -9,7 +9,7 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Dashboards</a></li>
-                    {{-- <li class="breadcrumb-item active">Dashboard</li> --}}
+
                 </ol>
             </div>
 
@@ -17,24 +17,24 @@
     </div>
 </div>
 <!-- end page title -->
-{{-- <div class="row">
+ <div class="row">
     <div class="col-md-12">
         <form>
         <div class="card">
-            <div class="card-header card_header bg-dark">
+            <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
                 <i class="fab fa-gg-circle"></i>All User Information
                 </div>
                 <div class="col-md-4 card_header_btn">
-                <a class="btn btn-sm btn-secondary chb_btn" href="{{url('dashboard/user/add')}}"><i class="fas fa-plus-circle"></i> Add User</a>
-                </div>
+                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{url('dashboard/user/add')}}"><i class="fas fa-plus-circle"></i> All User</a>
+                    </div>
             </div>
             </div>
             <div class="card-body card_body">
             <div class="row">
                 <div class="col-md-12">
-                <table id="allDataTable" class="table table-bordered table-striped table-hover custom_table">
+                <table id="dataTable" class="table table-bordered table-striped table-hover custom_table custom_table">
                     <thead class="table-dark">
                     <tr>
                         <th>Name</th>
@@ -51,25 +51,23 @@
                         <td>{{ $data->name }}</td>
                         <td>{{ $data->phone }}</td>
                         <td>{{ $data->email }}</td>
-                        {{-- <td>{{ $data->roleInfo->role_name }}</td> --}}
-                        {{-- <td>
+                        <td>....</td>
+                        <td>
                         @if($data->photo)
                             <img height="40" src="{{ asset('uploads/users/'.$data->photo) }}"/>
                         @else
                             <img height="40" src="{{ asset('uploads/avatar.png') }}"/>
                         @endif
                         </td>
-                        <td>
-                        <div class="btn-group">
-                                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Manage
-                            </button> --}}
-                            {{-- <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{url('dashboard/user/view/'.$data->id)}}">View</a>
-                                    <a class="dropdown-item" href="{{url('dashboard/user/edit/'.$data->id)}}">Edit</a>
-                                    <a class="dropdown-item" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->id}}">Delete</a>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">Manage <i class="mdi mdi-chevron-down"></i></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item text-primary btn-link" href="{{ url('dashboard/user/view') }}"><i class="dripicons-preview"></i> view</a>
+                                    <a class="dropdown-item text-primary btn-link" href="{{ route('user.edit',$data->slug) }}"><i class="dripicons-document-edit"></i> Edit</a>
+                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->id}}">Delete</a>
+                                </div>
                             </div>
-                        </div>
                         </td>
                     </tr>
                     @endforeach
@@ -85,8 +83,8 @@
             <a href="#" class="btn btn-sm btn-warning">CSV</a>
             </div>
         </div>
-        </form> --}}
-    {{-- </div>
+        </form>
+     </div>
     </div>
     <div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -107,60 +105,7 @@
         </div>
         </form>
     </div>
-    </div>  --}}
-
-<div class="row">
-    <div class="col-xl-12">
-
-        <div class="card">
-            <div class="card-header card_header bg-dark">
-                <div class="row">
-                    <div class="col-md-8 card_header_title">
-                    <i class="fab fa-gg-circle"></i>All User Information
-                    </div>
-                    <div class="col-md-4 card_header_btn">
-                    <a class="btn btn-sm btn-secondary chb_btn" href="{{url('dashboard/user/add')}}"><i class="fas fa-plus-circle"></i> Add User</a>
-                    </div>
-                </div>
-                </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped mb-0">
-
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-        </div>
     </div>
-</div>
+
+
 @endsection

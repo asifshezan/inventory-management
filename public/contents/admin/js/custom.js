@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    $('#allDataTable').DataTable({
+    $('#dataTable').DataTable({
         "info": true,
         "ordering": false,
-        "seraching": true,
+        "searching": true,
         "paging": true,
     });
 });

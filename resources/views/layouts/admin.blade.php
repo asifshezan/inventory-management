@@ -12,14 +12,21 @@
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('contents/admin') }}/images/favicon.ico">
+            <!-- DataTables -->
+            <link href="{{ asset('contents/admin') }}/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+            <link href="{{ asset('contents/admin') }}/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"/>
+
+            <!-- Responsive datatable examples -->
+            <link href="{{ asset('contents/admin') }}/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"/>
 
         <!-- Bootstrap Css -->
-        <link href="{{ asset('contents/admin') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('contents/admin') }}/css/bootstrap.min.css" rel="stylesheet"/>
         <!-- Icons Css -->
-        <link href="{{ asset('contents/admin') }}/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('contents/admin') }}/css/icons.min.css" rel="stylesheet"/>
         <!-- App Css-->
-        <link href="{{ asset('contents/admin') }}/css/app.min.css" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('contents/admin') }}/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('contents/admin') }}/css/app.min.css" rel="stylesheet"/>
+        <link href="{{ asset('contents/admin') }}/css/style.css" rel="stylesheet"/>
+        <script src="{{ asset('contents/admin') }}/js/sweetalert.min.js"></script>
 
     </head>
 
@@ -277,7 +284,7 @@
                         <ul class="metismenu list-unstyled" id="side-menu">
                             <li class="menu-title" key="t-menu">Menu</li>
                             <li>
-                                <a href="{{ url('dashboard')}}" class="waves-effect">
+                                <a href="{{ route('dashboard') }}" class="waves-effect">
                                     <i class="bx bx-home-circle"></i>
                                     <span key="t-dashboards">Dashboards</span>
                                 </a>
@@ -403,8 +410,8 @@
                                     <span>People</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ url('dashboard/user') }}">User List</a></li>
-                                    <li><a href="{{ url('dashboard/user/add') }}">Add User</a></li>
+                                    <li><a href="{{ route('user.index') }}">User List</a></li>
+                                    <li><a href="{{ route('user.create') }}">Add User</a></li>
                                     <li><a href="calendar.html">Customer List</a></li>
                                     <li><a href="calendar.html">Add Customer</a></li>
                                     <li><a href="calendar.html">Biller List</a></li>
@@ -520,6 +527,8 @@
         <script src="{{ asset('contents/admin') }}/libs/metismenu/metisMenu.min.js"></script>
         <script src="{{ asset('contents/admin') }}/libs/simplebar/simplebar.min.js"></script>
         <script src="{{ asset('contents/admin') }}/libs/node-waves/waves.min.js"></script>
+        <script src="{{ asset('contents/admin') }}/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('contents/admin') }}/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
         <!-- apexcharts -->
         {{-- <script src="{{ asset('contents/admin') }}/libs/apexcharts/apexcharts.min.js"></script> --}}

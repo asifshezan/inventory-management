@@ -19,15 +19,15 @@
 <!-- end page title -->
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ route('user.create') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('user.update',$data->slug)}}" enctype="multipart/form-data">
         @csrf
         <div class="card">
             <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
-                <i class="fab fa-gg-circle"></i>Add User Information</div>
+                <i class="fab fa-gg-circle"></i>Update User Information</div>
                 <div class="col-md-4 card_header_btn">
-                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ url('dashboard/user') }}"><i class="fas fa-th"></i> All User</a>
+                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('user.index') }}"><i class="fas fa-th"></i> All User</a>
                 </div>
             </div>
         </div>
@@ -48,15 +48,17 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="{{ url('dashboard/user/submit') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('dashboard/user/update') }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                         <p class="pera">The field labels marked with * are required input fields.</p>
 
                             <div class="row">
                                 <div class="col-md-6 {{ $errors->has('name') ? 'has-error':'' }}">
                                     <div class="mb-3">
+                                        <input type="hidden" name="id" value="{{ $data->id }}"/>
                                         <label for="formrow-email-input" class="form-label form_label">UserName<span class="req_star">*</span></label>
-                                        <input type="text" class="form-control"  placeholder="Enter Your Name" name="name">
+                                        <input type="text" class="form-control"  placeholder="Enter Your Name" name="name" value="{{ $data->name }}">
                                         @if ($errors->has('name'))
                                             <span class="error">{{ $errors->first('name') }}</span>
                                         @endif
@@ -66,41 +68,27 @@
                                 <div class="col-md-6 {{ $errors->has('email') ? 'has-error':'' }}">
                                     <div class="mb-3">
                                         <label for="formrow-email-input" class="form-label form_label">Email<span class="req_star">*</span></label>
-                                        <input type="email" class="form-control" name="email" placeholder="Enter Your Email ID">
+                                        <input type="email" class="form-control" name="email" placeholder="Enter Your Email ID" value="{{ $data->email }}" >
                                         @if ($errors->has('email'))
-                                            <span class="error">{{ $errros->first('email') }}</span>
+                                            <span class="error">{{ $errors->first('email') }}</span>
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-6 {{ $errors->has('password') ? 'has-error':'' }}">
-                                    <div class="mb-3">
-                                        <label for="formrow-password-input" class="form-label form_label">Password<span class="req_star">*</span></label>
-                                        <input type="password" class="form-control" name="password" placeholder="Enter Your Password">
-                                        @if ($errors->has('password'))
-                                            <span class="error">{{ $errors->first('password') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="formrow-password-input" class="form-label form_label">Confirm Password<span class="req_star">*</span></label>
-                                        <input type="password" class="form-control" name="password_confirmation" placeholder="Enter Your Confirm-Password">
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="formrow-password-input" class="form-label form_label">Phone Number<span class="req_star">*</span></label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Enter Your Phone Number">
+                                        <input type="text" class="form-control" name="phone" placeholder="Enter Your Phone Number" value="{{ $data->phone }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="formrow-inputState" class="form-label  form_label">Role<span class="req_star">*</span></label>
-                                        <select name="role" class="form-select">
+                                        <select name="role" class="form-select" value="{{ $data->role }}">
                                             <option selected disabled>Select User Role</option></option>
-                                            <option value="1">Admin</option>
-                                            <option value="2">Customer</option>
-                                            <option value="3">Visitor</option>
+                                            <option value="1" {{ $data->role == 1 ? 'selected':''}}>Admin</option>
+                                            <option value="2" {{ $data->role == 2 ? 'selected':''}}>Customer</option>
+                                            <option value="3" {{ $data->role == 3 ? 'selected':''}}>Visitor</option>
                                         </select>
                                     </div>
                                 </div>
@@ -113,7 +101,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" name="active">
+                                    <input class="form-check-input" type="checkbox" value="1" name="active" {{ $data->active == 1 ? 'checked':'' }}>
                                     <label class="form-check-label check_input" for="gridCheck">
                                          <strong>Active</strong>
                                     </label>
