@@ -27,7 +27,7 @@
                 <i class="fab fa-gg-circle"></i>All User Information
                 </div>
                 <div class="col-md-4 card_header_btn">
-                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{url('dashboard/user/add')}}"><i class="fas fa-plus-circle"></i> All User</a>
+                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('user.create' )}}"><i class="fas fa-plus-circle"></i> Add User</a>
                     </div>
             </div>
             </div>
@@ -65,7 +65,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item text-primary btn-link" href="{{ url('dashboard/user/view') }}"><i class="dripicons-preview"></i> view</a>
                                     <a class="dropdown-item text-primary btn-link" href="{{ route('user.edit',$data->slug) }}"><i class="dripicons-document-edit"></i> Edit</a>
-                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->id}}">Delete</a>
+                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->id}}"><i class="dripicons-trash"></i> Delete</a>
                                 </div>
                             </div>
                         </td>
@@ -88,7 +88,7 @@
     </div>
     <div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form method="post" action="{{url('dashboard/user/softdelete')}}">
+        <form method="post" action="{{ route('user.softdelete')}}">
         @csrf
         <div class="modal-content">
         <div class="modal-header">

@@ -412,8 +412,8 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('user.index') }}">User List</a></li>
                                     <li><a href="{{ route('user.create') }}">Add User</a></li>
-                                    <li><a href="calendar.html">Customer List</a></li>
-                                    <li><a href="calendar.html">Add Customer</a></li>
+                                    <li><a href="{{ route('customer.index') }}">Customer List</a></li>
+                                    <li><a href="{{ route('customer.create') }}">Add Customer</a></li>
                                     <li><a href="calendar.html">Biller List</a></li>
                                     <li><a href="calendar.html">Add Biller</a></li>
                                     <li><a href="calendar.html">Supplier List</a></li>

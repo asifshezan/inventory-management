@@ -20,11 +20,11 @@ class UserController extends Controller
 
     public function index(){
         $all = User::where('status',1)->orderBy('id','DESC')->get();
-        return view('admin.user.all', compact('all'));
+        return view('admin.user.index', compact('all'));
     }
 
-    public function add(){
-        return view('admin.user.add');
+    public function create(){
+        return view('admin.user.create');
     }
 
     public function edit($slug){
@@ -36,7 +36,7 @@ class UserController extends Controller
 
     }
 
-    public function create(Request $request){
+    public function store(Request $request){
         $this->validate($request,[
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -115,6 +115,22 @@ class UserController extends Controller
             return redirect()->back();
         }else{
             Session::flash('error','Opps! Failed to update.');
+            return redirect()->back();
+        }
+    }
+
+    public function softdelete(){
+        $id = $_POST['modal_id'];
+        $soft = User::where('status',1)->where('id',$id)->update([
+            'status' => 0,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+        ]);
+
+        if($soft){
+            Session::flash('success','Successfully delete.');
+            return redirect()->back();
+        }else{
+            Session::flash('error','Opps! Failed to delete.');
             return redirect()->back();
         }
     }

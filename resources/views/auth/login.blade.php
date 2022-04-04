@@ -1,12 +1,6 @@
-
-
 <!doctype html>
 <html lang="en">
-
-
-<!-- Mirrored from themesbrand.com/skote/layouts/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 14:26:13 GMT -->
 <head>
-
         <meta charset="utf-8" />
         <title>Login | Skote - Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +8,13 @@
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('contents/admin') }}/images/favicon.ico">
-
         <!-- Bootstrap Css -->
         <link href="{{ asset('contents/admin') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
         <link href="{{ asset('contents/admin') }}/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{ asset('contents/admin') }}/css/app.min.css" rel="stylesheet" type="text/css" />
-
     </head>
-
     <body>
         <div class="account-pages my-5 pt-sm-5">
             <div class="container">
@@ -45,7 +36,7 @@
                             </div>
                             <div class="card-body pt-0">
                                 <div class="auth-logo">
-                                    <a href="{{ url('dashboard')}}" class="auth-logo-light">
+                                    <a href="{{ route('dashboard')}}" class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
                                                 <img src="{{ asset('contents/admin') }}/images/logo-light.svg" alt="" class="rounded-circle" height="34">
