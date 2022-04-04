@@ -32,8 +32,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::get('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
     Route::post('/customer', [CustomerController::class, 'store'])->name('customer.store');
     Route::get('/customer/view/{slug}', [CustomerController::class, 'view'])->name('customer.view');
-    Route::get('/customer/edit/{slug}', [CustomerController::class, 'edit'])->name('customer.edit');
-    Route::put('/customer/{slug}', [CustomerController::class, 'view'])->name('customer.update');
+    Route::get('/customer/edit/{slug}', [customerController::class, 'edit'])->name('customer.edit');
+    Route::put('/customer/{slug}', [CustomerController::class, 'update'])->name('customer.update');
     Route::post('/customer/soft-delete', [CustomerController::class, 'softdelete'])->name('customer.softdelete');
 
 

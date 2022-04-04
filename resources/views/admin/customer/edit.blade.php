@@ -19,15 +19,16 @@
 <!-- end page title -->
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ route('user.update',$data->slug)}}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('customer.update',$data->customer_slug)}}" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="card">
             <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
-                <i class="fab fa-gg-circle"></i>Update User Information</div>
+                <i class="fab fa-gg-circle"></i>Update Customer Information</div>
                 <div class="col-md-4 card_header_btn">
-                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('user.index') }}"><i class="fas fa-th"></i> All User</a>
+                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('customer.index') }}"><i class="fas fa-th"></i> All Customer</a>
                 </div>
             </div>
         </div>
@@ -48,67 +49,104 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="{{ url('dashboard/user/update') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('customer.update', $data->customer_slug) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                         <p class="pera">The field labels marked with * are required input fields.</p>
 
                             <div class="row">
-                                <div class="col-md-6 {{ $errors->has('name') ? 'has-error':'' }}">
-                                    <div class="mb-3">
-                                        <input type="hidden" name="id" value="{{ $data->id }}"/>
-                                        <label for="formrow-email-input" class="form-label form_label">UserName<span class="req_star">*</span></label>
-                                        <input type="text" class="form-control"  placeholder="Enter Your Name" name="name" value="{{ $data->name }}">
-                                        @if ($errors->has('name'))
-                                            <span class="error">{{ $errors->first('name') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 {{ $errors->has('email') ? 'has-error':'' }}">
-                                    <div class="mb-3">
-                                        <label for="formrow-email-input" class="form-label form_label">Email<span class="req_star">*</span></label>
-                                        <input type="email" class="form-control" name="email" placeholder="Enter Your Email ID" value="{{ $data->email }}" >
-                                        @if ($errors->has('email'))
-                                            <span class="error">{{ $errors->first('email') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
-
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="formrow-password-input" class="form-label form_label">Phone Number<span class="req_star">*</span></label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Enter Your Phone Number" value="{{ $data->phone }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="formrow-inputState" class="form-label  form_label">Role<span class="req_star">*</span></label>
-                                        <select name="role" class="form-select" value="{{ $data->role }}">
-                                            <option selected disabled>Select User Role</option></option>
-                                            <option value="1" {{ $data->role == 1 ? 'selected':''}}>Admin</option>
-                                            <option value="2" {{ $data->role == 2 ? 'selected':''}}>Customer</option>
-                                            <option value="3" {{ $data->role == 3 ? 'selected':''}}>Visitor</option>
+                                        <label for="formrow-inputState" class="form-label  form_label">Customer Group<span class="req_star">*</span></label>
+                                        <select name="cg_id" class="form-select">
+                                            <option selected disabled>Select Group</option></option>
+                                            <option value="1">Admin</option>
+                                            <option value="2">Customer</option>
+                                            <option value="3">Visitor</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-md-6 {{ $errors->has('customer_name') ? 'has-error':'' }}">
+                                    <div class="mb-3">
+                                        <input type="hidden" name="customer_id" value="{{ $data->customer_id }}"/>
+                                        <label for="formrow-email-input" class="form-label form_label">Name<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control"  placeholder="Enter Your Name" name="customer_name" value="{{ $data->customer_name }}">
+                                        @if ($errors->has('customer_name'))
+                                            <span class="error">{{ $errors->first('customer_name') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 {{ $errors->has('customer_company') ? 'has-error':'' }}">
+                                    <div class="mb-3">
+                                        <label for="formrow-email-input" class="form-label form_label">Company Name<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control"  placeholder="Enter Your Name" name="customer_company" value="{{ $data->customer_company }}">
+                                        @if ($errors->has('customer_company'))
+                                            <span class="error">{{ $errors->first('customer_company') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 {{ $errors->has('customer_email') ? 'has-error':'' }}">
+                                    <div class="mb-3">
+                                        <label for="formrow-email-input" class="form-label form_label">Email<span class="req_star">*</span></label>
+                                        <input type="email" class="form-control" name="customer_email" placeholder="Enter Your customer_email ID" value="{{ $data->customer_email }}">
+                                        @if ($errors->has('customer_email'))
+                                            <span class="error">{{ $errros->first('customer_email') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 {{ $errors->has('customer_phone') ? 'has-error':'' }}">
+                                    <div class="mb-3">
+                                        <label  class="form-label form_label">Phone Number<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control" name="customer_phone" placeholder="Enter Your customer_phone" value="{{ $data->customer_phone }}">
+                                        @if ($errors->has('customer_phone'))
+                                            <span class="error">{{ $errors->first('customer_phone') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label form_label">Photo</label>
-                                        <input class="form-control" type="file" name="pic">
+                                        <label class="form-label form_label">Remarks</label>
+                                        <input type="text" class="form-control" name="customer_remarks" placeholder="Enter Your remarks" value="{{ $data->customer_remarks }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 {{ $errors->has('customer_address' ? 'has-error':'') }}">
+                                    <div class="mb-3">
+                                        <label class="form-label form_label">Address<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control" name="customer_address" placeholder="Enter Your Address" value="{{ $data->customer_address }}">
+                                        @if ($errors->has('customer_address'))
+                                            <span class="error">{{ $errors->first('customer_address') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="mb-3">
+                                        <label class="form-label form_label">City<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control" name="customer_city" placeholder="Enter Your City" value="{{ $data->customer_city }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label form_label">State<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control" name="customer_state" placeholder="Enter Your State" value="{{ $data->customer_state }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label form_label">Postal Code<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control" name="customer_postal" placeholder="Enter Your Phone Number" value="{{ $data->customer_postal }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label form_label">Country<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control" name="customer_country" placeholder="Enter Your Phone Number" value="{{ $data->customer_country }}">
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" name="active" {{ $data->active == 1 ? 'checked':'' }}>
-                                    <label class="form-check-label check_input" for="gridCheck">
-                                         <strong>Active</strong>
-                                    </label>
-                                </div>
-                            </div>
+
                             <div>
-                                <button type="submit" class="btn btn-primary w-md">Submit</button>
+                                <button type="submit" class="btn btn-primary w-md">Update</button>
                             </div>
                         </form>
                     </div>
@@ -116,10 +154,6 @@
                 </div>
                 <!-- end card -->
             </div>
-
-
-
-
             </div>
         </div>
         </form>
