@@ -93,9 +93,18 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="formFile" class="form-label form_label">Photo</label>
-                                        <input class="form-control" type="file" name="pic">
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label form_label">Photo</label>
+                                            <input class="form-control" type="file" name="pic">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 sp_pic">
+                                        @if( $data->photo!='' )
+                                        <img src="{{ asset('uploads/users/' . $data->photo) }}" height="40" width="40" class="img-fluid" alt="">
+                                        @else
+                                        <img src="{{ asset('uploads/avater.png') }}" height="50">
+                                        @endif
                                     </div>
                                 </div>
                             </div>

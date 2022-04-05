@@ -24,9 +24,9 @@
             <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
-                <i class="fab fa-gg-circle"></i>All Customer Information</div>
+                <i class="fab fa-gg-circle"></i>All Supplier Information</div>
                 <div class="col-md-4 card_header_btn">
-                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('customer.create' )}}"><i class="fas fa-plus-circle"></i> Add Customer</a>
+                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('supplier.create' )}}"><i class="fas fa-plus-circle"></i> Add Supplier</a>
                     </div>
             </div>
             </div>
@@ -36,7 +36,7 @@
                 <table id="dataTable" class="table table-bordered table-striped table-hover custom_table custom_table">
                     <thead class="table-dark">
                     <tr>
-                        <th>Customer Group</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Company Name</th>
                         <th>Email</th>
@@ -48,20 +48,24 @@
                     <tbody>
                     @foreach($all as $data)
                     <tr>
-                        <td>{{ $data->cg_id }}</td>
-                        <td>{{ $data->customer_name }}</td>
-                        <td>{{ $data->customer_company }}</td>
-                        <td>{{ $data->customer_email }}</td>
-                        <td>{{ $data->customer_phone }}</td>
-                        <td>{{ $data->customer_address }}</td>
+                        <td>@if($data->supplier_image)
+                            <img height="40" src="{{ asset('uploads/suppliers/' . $data->supplier_image) }}"/>
+                        @else
+                            <img height="40" src="{{ asset('uploads/avatar.png') }}"/>
+                        @endif</td>
+                        <td>{{ $data->supplier_name }}</td>
+                        <td>{{ $data->supplier_company }}</td>
+                        <td>{{ $data->supplier_email }}</td>
+                        <td>{{ $data->supplier_phone }}</td>
+                        <td>{{ $data->supplier_address }}</td>
 
                         <td class="text-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">Manage <i class="mdi mdi-chevron-down"></i></button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item text-primary btn-link" href="{{ route('customer.view', $data->customer_slug) }}"><i class="dripicons-preview"></i> view</a>
-                                    <a class="dropdown-item text-primary btn-link" href="{{ route('customer.edit', $data->customer_slug) }}"><i class="dripicons-document-edit"></i> Edit</a>
-                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{ $data->customer_id }}"><i class="dripicons-trash"></i> Delete</a>
+                                    <a class="dropdown-item text-primary btn-link" href="{{ route('supplier.view', $data->supplier_slug) }}"><i class="dripicons-preview"></i> view</a>
+                                    <a class="dropdown-item text-primary btn-link" href="{{ route('supplier.edit', $data->supplier_slug) }}"><i class="dripicons-document-edit"></i> Edit</a>
+                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{ $data->supplier_id }}"><i class="dripicons-trash"></i> Delete</a>
                                 </div>
                             </div>
                         </td>
@@ -84,7 +88,7 @@
     </div>
     <div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form method="post" action="{{ route('customer.softdelete')}}">
+        <form method="post" action="{{ route('supplier.softdelete')}}">
         @csrf
         <div class="modal-content">
         <div class="modal-header">

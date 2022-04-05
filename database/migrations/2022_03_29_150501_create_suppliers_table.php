@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('suppliers', function (Blueprint $table) {
             $table->bigIncrements('supplier_id');
             $table->string('supplier_name',50);
-            $table->string('customer_phone',20)->unique();
+            $table->string('supplier_phone',20)->unique();
             $table->string('supplier_email',40)->nullable();
             $table->string('supplier_company',100)->nullable();
             $table->string('supplier_address',200)->nullable();

@@ -416,8 +416,8 @@
                                     <li><a href="{{ route('customer.create') }}">Add Customer</a></li>
                                     <li><a href="calendar.html">Biller List</a></li>
                                     <li><a href="calendar.html">Add Biller</a></li>
-                                    <li><a href="calendar.html">Supplier List</a></li>
-                                    <li><a href="calendar.html">Add Supplier</a></li>
+                                    <li><a href="{{ route('supplier.index') }}">Supplier List</a></li>
+                                    <li><a href="{{ route('supplier.create') }}">Add Supplier</a></li>
                                 </ul>
                             </li>
                             <li>

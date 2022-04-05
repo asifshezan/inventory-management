@@ -36,6 +36,15 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::put('/customer/{slug}', [CustomerController::class, 'update'])->name('customer.update');
     Route::post('/customer/soft-delete', [CustomerController::class, 'softdelete'])->name('customer.softdelete');
 
+    // Supplier Route
+
+    Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier.index');
+    Route::get('/supplier/create', [SupplierController::class, 'create'])->name('supplier.create');
+    Route::post('/supplier', [SupplierController::class, 'store'])->name('supplier.store');
+    Route::get('/supplier/edit/{slug}', [SupplierController::class, 'edit'])->name('supplier.edit');
+    Route::get('/supplier/view/{slug}', [SupplierController::class, 'view'])->name('supplier.view');
+    Route::put('/supplier/{slug}', [SupplierController::class, 'update'])->name('supplier.update');
+    Route::post('/supplier/soft-delete', [SupplierController::class, 'softdelete'])->name('supplier.softdelete');
 
 
 

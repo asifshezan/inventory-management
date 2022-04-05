@@ -117,4 +117,19 @@ class CustomerController extends Controller
             return redirect()->back();
         }
     }
+
+    public function softdelete(){
+        $id = $_POST['modal_id'];
+        $soft = Customer::where('customer_status',1)->where('customer_id',$id)->update([
+            'customer_status' => 0,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+        ]);
+        if($soft){
+            Session::flash('success','Successfully Delete.');
+            return redirect()->back();
+        }else{
+            Session::flash('error','Opps!Failed to delete.');
+            return redirect()->back();
+        }
+    }
 }
