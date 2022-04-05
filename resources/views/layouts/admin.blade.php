@@ -451,13 +451,13 @@
                                     <span>Settings</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="calendar.html">Role Permission</a></li>
+                                    <li><a href="{{ route('role.index') }}">Role Permission</a></li>
                                     <li><a href="calendar.html">Discount Plan</a></li>
                                     <li><a href="calendar.html">Discout</a></li>
                                     <li><a href="calendar.html">Send Notification</a></li>
                                     <li><a href="calendar.html">Warehouse</a></li>
-                                    <li><a href="calendar.html">Customer Group</a></li>
-                                    <li><a href="calendar.html">Brand</a></li>
+                                    <li><a href="#">Customer Group</a></li>
+                                    <li><a href="{{ route('brand.index') }}">Brand</a></li>
                                     <li><a href="calendar.html">Unit</a></li>
                                     <li><a href="calendar.html">Currency</a></li>
                                     <li><a href="calendar.html">Tax</a></li>

@@ -5,6 +5,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerGroupController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 
@@ -46,9 +49,25 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::put('/supplier/{slug}', [SupplierController::class, 'update'])->name('supplier.update');
     Route::post('/supplier/soft-delete', [SupplierController::class, 'softdelete'])->name('supplier.softdelete');
 
+    // Role Route
 
+    Route::get('/role', [RoleController::class, 'index'])->name('role.index');
+    Route::get('/role/create', [RoleController::class, 'create'])->name('role.create');
+    Route::post('/role', [RoleController::class, 'store'])->name('role.store');
+    Route::get('/role/edit/{slug}', [RoleController::class, 'edit'])->name('role.edit');
+    Route::get('/role/view/{slug}', [RoleController::class, 'view'])->name('role.view');
+    Route::put('/role/{slug}', [RoleController::class, 'update'])->name('role.update');
+    Route::post('/role/soft-delete', [RoleController::class, 'softdelete'])->name('role.softdelete');
 
+    // Brand Route
 
+    Route::get('/brand', [BrandController::class, 'index'])->name('brand.index');
+    Route::get('/brand/create', [BrandController::class, 'create'])->name('brand.create');
+    Route::post('/brand', [BrandController::class, 'store'])->name('brand.store');
+    Route::get('/brand/edit/{slug}', [BrandController::class, 'edit'])->name('brand.edit');
+    Route::get('/brand/view/{slug}', [BrandController::class, 'view'])->name('brand.view');
+    Route::put('/brand/{slug}', [BrandController::class, 'update'])->name('brand.update');
+    Route::post('/brand/soft-delete', [BrandController::class, 'softdelete'])->name('brand.softdelete');
 
 
 

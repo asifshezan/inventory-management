@@ -19,9 +19,7 @@
 <!-- end page title -->
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ route('supplier.update',$data->supplier_slug)}}" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+
         <div class="card">
             <div class="card-header card_header">
             <div class="row">
@@ -161,7 +159,6 @@
             </div>
             </div>
         </div>
-        </form>
     </div>
 </div>
 @endsection
