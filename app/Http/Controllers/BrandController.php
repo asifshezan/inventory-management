@@ -97,4 +97,20 @@ class BrandController extends Controller
                 return redirect()->back();
             }
     }
+
+    public function softdelete(){
+        $id = $_POST['modal_id'];
+        $soft = Brand::where('brand_status',1)->where('brand_id',$id)->update([
+            'brand_status' => 0,
+            'updated_at' => Carbon::now()->toDateTimeString(),
+        ]);
+
+        if($soft){
+            Session::flash('success','Successfully delete.');
+            return redirect()->back();
+        }else{
+            Session::flash('error','Opps! Failed to delete.');
+            return redirect()->back();
+        }
+    }
 }

@@ -473,13 +473,14 @@
                                 </ul>
                             </li>
 
-                        <form action="{{ route('logout') }}" method="POST" id="logout-form"></form>
+                        <form action="{{ route('logout') }}" method="POST" id="logout-form">
                             <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="bx bx-power-off font-size-16  text-danger"></i>
                                         <span key="t-logout">Logout</span></a>
                                 </a>
                             </li>
+                        </form>
                         </ul>
                     </div>
                     <!-- Sidebar -->

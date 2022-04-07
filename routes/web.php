@@ -69,6 +69,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::put('/brand/{slug}', [BrandController::class, 'update'])->name('brand.update');
     Route::post('/brand/soft-delete', [BrandController::class, 'softdelete'])->name('brand.softdelete');
 
+    // Customer Group Route
+
+    Route::get('/customer-group', [CustomerGroupController::class, 'index'])->name('cg.index');
+    Route::get('/customer-group/create', [CustomerGroupController::class, 'create'])->name('cg.create');
+    Route::post('/customer-group', [CustomerGroupController::class, 'store'])->name('cg.store');
+    Route::get('/customer-group/edit/{slug}', [CustomerGroupController::class, 'edit'])->name('cg.edit');
+    Route::get('/customer-group/view/{slug}', [CustomerGroupController::class, 'view'])->name('cg.view');
+    Route::put('/customer-group/{slug}', [CustomerGroupController::class, 'update'])->name('cg.update');
+    Route::post('/customer-group/soft-delete', [CustomerGroupController::class, 'softdelete'])->name('cg.softdelete');
+
 
 
 
