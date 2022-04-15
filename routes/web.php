@@ -10,6 +10,10 @@ use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BasicController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\ContactController;
+
 
 
 //  User Controller
@@ -79,7 +83,11 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::put('/customer-group/{slug}', [CustomerGroupController::class, 'update'])->name('cg.update');
     Route::post('/customer-group/soft-delete', [CustomerGroupController::class, 'softdelete'])->name('cg.softdelete');
 
+    // Basic Info Route
 
+
+    Route::get('basic-setting', [BasicController::class, 'index'])->name('basic.index');
+    Route::post('basic-setting', [BasicController::class, 'update'])->name('basic.update');
 
 
 
