@@ -456,7 +456,7 @@
                                     <li><a href="calendar.html">Discout</a></li>
                                     <li><a href="calendar.html">Send Notification</a></li>
                                     <li><a href="calendar.html">Warehouse</a></li>
-                                    <li><a href="#">Customer Group</a></li>
+                                    <li><a href="{{ route('cg.index') }}">Customer Group</a></li>
                                     <li><a href="{{ route('brand.index') }}">Brand</a></li>
                                     <li><a href="calendar.html">Unit</a></li>
                                     <li><a href="calendar.html">Currency</a></li>

@@ -8,7 +8,7 @@
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Dashboards</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboards</a></li>
 
                 </ol>
             </div>
@@ -17,18 +17,17 @@
     </div>
 </div>
 <!-- end page title -->
- <div class="row">
+<div class="row">
     <div class="col-md-12">
         <form>
         <div class="card">
             <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
-                <i class="fab fa-gg-circle"></i>All User Information
-                </div>
+                <i class="fab fa-gg-circle"></i>All Customer Group Information</div>
                 <div class="col-md-4 card_header_btn">
-                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('user.create' )}}"><i class="fas fa-plus-circle"></i> Add User</a>
-                    </div>
+                    <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('cg.create' )}}"><i class="fas fa-plus-circle"></i> Add Customer-Group</a>
+                </div>
             </div>
             </div>
             <div class="card-body card_body">
@@ -38,34 +37,23 @@
                     <thead class="table-dark">
                     <tr>
                         <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Photo</th>
-                        <th>Manage</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($all as $data)
                     <tr>
-                        <td>{{ $data->name }}</td>
-                        <td>{{ $data->phone }}</td>
-                        <td>{{ $data->email }}</td>
-                        <td>....</td>
                         <td>
-                        @if($data->photo)
-                            <img height="40" src="{{ asset('uploads/users/'.$data->photo) }}"/>
-                        @else
-                            <img height="40" src="{{ asset('uploads/avatar.png') }}"/>
-                        @endif
+                            {{ $data->cg_name }}
                         </td>
+                        <td>{{ $data->cg_remarks }}</td>
                         <td class="text-center">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">Manage <i class="mdi mdi-chevron-down"></i></button>
                                 <div class="dropdown-menu">
-                                    {{-- <a class="dropdown-item text-primary btn-link" href="{{ url('dashboard/user/view') }}"><i class="dripicons-preview"></i> view</a> --}}
-                                    <a class="dropdown-item text-primary btn-link" href="{{ route('user.edit',$data->slug) }}"><i class="dripicons-document-edit"></i> Edit</a>
-                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{$data->id}}"><i class="dripicons-trash"></i> Delete</a>
+                                    <a class="dropdown-item text-primary btn-link" href="{{ route('cg.edit', $data->cg_slug) }}"><i class="dripicons-document-edit"></i> Edit</a>
+                                    <a class="dropdown-item text-primary btn-link" href="#" id="delete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="{{ $data->cg_id }}"><i class="dripicons-trash"></i> Delete</a>
                                 </div>
                             </div>
                         </td>
@@ -84,11 +72,11 @@
             </div>
         </div>
         </form>
-     </div>
+        </div>
     </div>
     <div class="modal fade" id="softDeleteModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form method="post" action="{{ route('user.softdelete')}}">
+        <form method="post" action="{{ route('cg.softdelete')}}">
         @csrf
         <div class="modal-content">
         <div class="modal-header">

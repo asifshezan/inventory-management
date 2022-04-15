@@ -19,8 +19,7 @@
 <!-- end page title -->
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="{{ route('user.update',$data->slug)}}" enctype="multipart/form-data">
-        @csrf
+
         <div class="card">
             <div class="card-header card_header">
             <div class="row">
@@ -48,7 +47,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="POST" action="{{ url('dashboard/user/update') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('user.update',$data->slug)}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                         <p class="pera">The field labels marked with * are required input fields.</p>
@@ -131,7 +130,7 @@
 
             </div>
         </div>
-        </form>
+
     </div>
 </div>
 @endsection
