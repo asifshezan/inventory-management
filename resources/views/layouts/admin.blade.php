@@ -453,7 +453,7 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('role.index') }}">Role Permission</a></li>
                                     <li><a href="{{ route('basic.index') }}">Basic Information</a></li>
-                                    <li><a href="calendar.html">Social Information</a></li>
+                                    <li><a href="{{ route('social.index') }}">Social Information</a></li>
                                     <li><a href="calendar.html">Contact Information</a></li>
                                     <li><a href="calendar.html">Discount Plan</a></li>
                                     <li><a href="calendar.html">Discout</a></li>

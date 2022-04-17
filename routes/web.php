@@ -85,9 +85,18 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
 
     // Basic Info Route
 
-
     Route::get('basic-setting', [BasicController::class, 'index'])->name('basic.index');
     Route::post('basic-setting', [BasicController::class, 'update'])->name('basic.update');
+
+    // Social Media Route
+
+    Route::get('social-setting', [SocialController::class, 'index'])->name('social.index');
+    Route::post('social-update', [SocialController::class, 'update'])->name('social.update');
+
+    // Contact Info Route
+
+    Route::get('contact-setting', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('contact-update', [ContactController::class, 'update'])->name('contact.update');
 
 
 
