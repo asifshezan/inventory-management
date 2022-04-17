@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ContactController;
@@ -82,6 +83,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     // Route::get('/customer-group/view/{slug}', [CustomerGroupController::class, 'view'])->name('cg.view');
     Route::put('/customer-group/{slug}', [CustomerGroupController::class, 'update'])->name('cg.update');
     Route::post('/customer-group/soft-delete', [CustomerGroupController::class, 'softdelete'])->name('cg.softdelete');
+
+    // Expense Category Route
+
+    Route::get('expense/category', [ExpenseCategoryController::class, 'index'])->name('expense.category.index');
+    Route::get('expense/category/create', [ExpenseCategoryController::class, 'create'])->name('expense.category.create');
+    Route::post('expense/category', [ExpenseCategoryController::class, 'store'])->name('expense.category.store');
+    Route::get('expense/category/view/{slug}', [ExpenseCategoryController::class, 'view'])->name('expense.category.view');
+    Route::get('expense/category/edit/{slug}', [ExpenseCategoryController::class, 'edit'])->name('expense.category.edit');
+    Route::put('expense/category/{slug}', [ExpenseCategoryController::class, 'update'])->name('expense.category.update');
+    Route::post('expense/category/soft-delete', [ExpenseCategoryController::class, 'softdelete'])->name('expense.category.softdelete');
 
     // Basic Info Route
 

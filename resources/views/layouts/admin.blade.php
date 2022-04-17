@@ -342,7 +342,7 @@
                                     <span key="t-ecommerce">Expense</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ecommerce-products.html">Expense Category</a></li>
+                                    <li><a href="{{ route('expense.category.index) }}">Expense Category</a></li>
                                     <li><a href="ecommerce-product-detail.html">Expense List</a></li>
                                     <li><a href="ecommerce-products.html">Add Expense</a></li>
                                 </ul>
@@ -453,7 +453,7 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('role.index') }}">Role Permission</a></li>
                                     <li><a href="{{ route('basic.index') }}">Basic Information</a></li>
-                                    <li><a href="{{ route('social.index') }}">Social Information</a></li>
+                                    <li><a href="{{ route('social.index') }}">Social Media</a></li>
                                     <li><a href="{{ route('contact.index') }}">Contact Information</a></li>
                                     <li><a href="calendar.html">Discount Plan</a></li>
                                     <li><a href="calendar.html">Discout</a></li>
