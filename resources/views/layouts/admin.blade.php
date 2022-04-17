@@ -454,7 +454,7 @@
                                     <li><a href="{{ route('role.index') }}">Role Permission</a></li>
                                     <li><a href="{{ route('basic.index') }}">Basic Information</a></li>
                                     <li><a href="{{ route('social.index') }}">Social Information</a></li>
-                                    <li><a href="calendar.html">Contact Information</a></li>
+                                    <li><a href="{{ route('contact.index') }}">Contact Information</a></li>
                                     <li><a href="calendar.html">Discount Plan</a></li>
                                     <li><a href="calendar.html">Discout</a></li>
                                     <li><a href="calendar.html">Send Notification</a></li>
