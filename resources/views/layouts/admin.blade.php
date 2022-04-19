@@ -463,7 +463,7 @@
                                     <li><a href="{{ route('brand.index') }}">Brand</a></li>
                                     <li><a href="calendar.html">Unit</a></li>
                                     <li><a href="calendar.html">Currency</a></li>
-                                    <li><a href="calendar.html">Tax</a></li>
+                                    <li><a href="{{ route('tax.index') }}">Tax</a></li>
                                     <li><a href="calendar.html">User Profile</a></li>
                                     <li><a href="calendar.html">Create SMS</a></li>
                                     <li><a href="calendar.html">Backup Database</a></li>

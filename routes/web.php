@@ -85,6 +85,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::put('/customer-group/{slug}', [CustomerGroupController::class, 'update'])->name('cg.update');
     Route::post('/customer-group/soft-delete', [CustomerGroupController::class, 'softdelete'])->name('cg.softdelete');
 
+     // Product Category Route
+
+    Route::get('product/category', [ProductCategoryController::class, 'index'])->name('product.category.index');
+    Route::get('product/category/create', [ProductCategoryController::class, 'create'])->name('product.category.create');
+    Route::post('product/category', [ProductCategoryController::class, 'store'])->name('product.category.store');
+    Route::get('product/category/view/{slug}', [ProductCategoryController::class, 'view'])->name('product.category.view');
+    Route::get('product/category/edit/{slug}', [ProductCategoryController::class, 'edit'])->name('product.category.edit');
+    Route::put('product/category/{slug}', [ProductCategoryController::class, 'update'])->name('product.category.update');
+    Route::post('product/category/soft-delete', [ProductCategoryController::class, 'softdelete'])->name('product.category.softdelete');
+
     // Expense Category Route
 
     Route::get('expense/category', [ExpenseCategoryController::class, 'index'])->name('expense.category.index');
@@ -94,6 +104,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::get('expense/category/edit/{slug}', [ExpenseCategoryController::class, 'edit'])->name('expense.category.edit');
     Route::put('expense/category/{slug}', [ExpenseCategoryController::class, 'update'])->name('expense.category.update');
     Route::post('expense/category/soft-delete', [ExpenseCategoryController::class, 'softdelete'])->name('expense.category.softdelete');
+
+    // Tax Route
+
+    Route::get('tax', [TaxController::class, 'index'])->name('tax.index');
+    Route::get('tax/create', [TaxController::class, 'create'])->name('tax.create');
+    Route::post('tax', [TaxController::class, 'store'])->name('tax.store');
+    Route::get('tax/view/{slug}', [TaxController::class, 'view'])->name('tax.view');
+    Route::get('tax/edit/{slug}', [TaxController::class, 'edit'])->name('tax.edit');
+    Route::put('tax/{slug}', [TaxController::class, 'update'])->name('tax.update');
+    Route::post('tax/soft-delete', [TaxController::class, 'softdelete'])->name('tax.softdelete');
 
     // Basic Info Route
 
@@ -109,19 +129,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
 
     Route::get('contact-setting', [ContactController::class, 'index'])->name('contact.index');
     Route::post('contact-update', [ContactController::class, 'update'])->name('contact.update');
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

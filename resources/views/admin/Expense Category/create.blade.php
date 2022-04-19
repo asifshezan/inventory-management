@@ -64,8 +64,8 @@
                                 </div> --}}
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-md-6 {{ $errors->has('expcate_code') ? 'has-error':'' }}">
-                                    <div class="form-group pb-2">
+                                <div class="col-md-6">
+                                    <div class="form-group pb-2 {{ $errors->has('expcate_code') ? 'has-error':'' }}">
                                         <label><strong>Code <span class="text-danger">*</span></strong> </label>
                                         <div class="input-group mb-3">
                                             <input type="number"  name="expcate_code" class="form-control" value="{{ old('expcate_code') }}">
@@ -85,7 +85,6 @@
                                     <div class="form-group pb-2">
                                         <label><strong>Remarks <span class="text-danger">*</span></strong> </label>
                                         <textarea class="form-control" name="expcate_remarks" value="{{ old('expcate_remarks') }}"></textarea>
-
                                     </div>
                                     <div class="form-group pb-2">
                                         <input type="submit" value="Submit" class="btn btn-primary">
