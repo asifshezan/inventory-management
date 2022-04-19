@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ExpenseCategoryController;
+use App\Http\Controllers\TaxController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ContactController;

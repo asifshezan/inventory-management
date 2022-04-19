@@ -342,7 +342,7 @@
                                     <span key="t-ecommerce">Expense</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('expense.category.index) }}">Expense Category</a></li>
+                                    <li><a href="{{ route('expense.category.index') }}">Expense Category</a></li>
                                     <li><a href="ecommerce-product-detail.html">Expense List</a></li>
                                     <li><a href="ecommerce-products.html">Add Expense</a></li>
                                 </ul>
