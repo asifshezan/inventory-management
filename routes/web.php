@@ -95,6 +95,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::put('product/category/{slug}', [ProductCategoryController::class, 'update'])->name('product.category.update');
     Route::post('product/category/soft-delete', [ProductCategoryController::class, 'softdelete'])->name('product.category.softdelete');
 
+    // Product Type Route
+
+    Route::get('product/type', [ProductTypeController::class, 'index'])->name('product.type.index');
+    Route::get('product/type/create', [ProductTypeController::class, 'create'])->name('product.type.create');
+    Route::post('product/type', [ProductTypeController::class, 'store'])->name('product.type.store');
+    Route::get('product/type/view/{slug}', [ProductTypeController::class, 'view'])->name('product.type.view');
+    Route::get('product/type/edit/{slug}', [ProductTypeController::class, 'edit'])->name('product.type.edit');
+    Route::put('product/type/{slug}', [ProductTypeController::class, 'update'])->name('product.type.update');
+    Route::post('product/type/soft-delete', [ProductTypeController::class, 'softdelete'])->name('product.type.softdelete');
+
     // Expense Category Route
 
     Route::get('expense/category', [ExpenseCategoryController::class, 'index'])->name('expense.category.index');

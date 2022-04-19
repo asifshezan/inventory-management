@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product__types', function (Blueprint $table) {
+        Schema::create('product_types', function (Blueprint $table) {
             $table->bigIncrements('pt_id');
             $table->string('pt_name')->unique();
             $table->text('pt_remarks')->nullable();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product__types');
+        Schema::dropIfExists('product_types');
     }
 };

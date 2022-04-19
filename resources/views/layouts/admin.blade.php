@@ -295,7 +295,8 @@
                                     <span>Product</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="calendar.html">Caregory</a></li>
+                                    <li><a href="#">Caregory</a></li>
+                                    <li><a href="{{ route('product.type.index') }}">Product Type</a></li>
                                     <li><a href="calendar-full.html">Product List</a></li>
                                     <li><a href="calendar.html">Add Product</a></li>
                                     <li><a href="calendar.html">Print Barcode</a></li>

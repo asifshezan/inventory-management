@@ -21,9 +21,9 @@
             <div class="card-header card_header">
             <div class="row">
                 <div class="col-md-8 card_header_title">
-                <i class="fab fa-gg-circle"></i>Edit Tax</div>
+                <i class="fab fa-gg-circle"></i>Add Product Type</div>
                 <div class="col-md-4 card_header_btn">
-                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('tax.index') }}"><i class="fas fa-th"></i> All Tax</a>
+                <a class="btn btn-primary waves-effect waves-light chb_btn" href="{{ route('product.type.index') }}"><i class="fas fa-th"></i> All Product Type</a>
                 </div>
             </div>
         </div>
@@ -44,34 +44,24 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="{{ route('tax.update', $data->tax_slug) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('product.type.store') }}" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                         <p class="pera">The field labels marked with * are required input fields.</p>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-md-6">
-                                <div class="form-group pb-2 {{ $errors->has('tax_name') ? 'has-error':'' }}">
+                                <div class="form-group pb-2 {{ $errors->has('pt_name') ? 'has-error':'' }}">
                                     <div class="mb-3">
-                                        <label for="formrow-email-input" class="form-label form_label">Tax Name<span class="req_star">*</span></label>
-                                        <input type="hidden" name="tax_id" value="{{ $data->tax_id }}">
-                                        <input type="text" class="form-control"  placeholder="Enter Your tax_name" name="tax_name" value="{{ $data->tax_name }}">
-                                        @if ($errors->has('tax_name'))
-                                            <span class="error">{{ $errors->first('tax_name') }}</span>
+                                        <label class="form-label form_label">Product Type Name<span class="req_star">*</span></label>
+                                        <input type="text" class="form-control"  placeholder="Enter Your pt_name" name="pt_name" value="{{ old('pt_name') }}">
+                                        @if ($errors->has('pt_name'))
+                                            <span class="error">{{ $errors->first('pt_name') }}</span>
                                         @endif
                                     </div>
                                 </div>
-                                <div class="form-group pb-2 {{ $errors->has('tax_percent') ? 'has-error':'' }}">
-                                    <div class="mb-3">
-                                        <label for="formrow-email-input" class="form-label form_label">Percentage<span class="req_star">*</span></label>
-                                        <input type="text" class="form-control"  placeholder="Enter Your tax_percent" name="tax_percent" value="{{ $data->tax_percent }}">
-                                        @if ($errors->has('tax_percent'))
-                                            <span class="error">{{ $errors->first('tax_percent') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
+
                                 <div class="form-group pb-4">
                                     <label><strong>Remarks <span class="text-danger">*</span></strong> </label>
-                                    <textarea class="form-control" name="tax_remarks" value="{{ $data->tax_remarks }}"></textarea>
+                                    <textarea class="form-control" name="pt_remarks" value="{{ old('pt_remarks') }}"></textarea>
                                 </div>
                                 <div class="form-group pb-2">
                                     <button type="submit" class="btn btn-primary w-md">Submit</button>
