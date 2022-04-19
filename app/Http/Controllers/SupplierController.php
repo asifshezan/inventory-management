@@ -88,7 +88,8 @@ class SupplierController extends Controller
     }
 
     public function update(Request $request)
-    {   $id = $request['supplier_id'];
+    {return($request->all());
+        $id = $request['supplier_id'];
         $this->validate($request,[
             'supplier_name' => ['required', 'string', 'max:255'],
             'supplier_company' => ['required', 'string', 'max:255'],

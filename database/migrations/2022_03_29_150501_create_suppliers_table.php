@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('supplier_state',50)->nullable();
             $table->string('supplier_postal',10)->nullable();
             $table->string('supplier_country',50)->nullable();
+            $table->string('supplier_image',50)->nullable();
             $table->text('supplier_remarks')->nullable();
             $table->integer('supplier_creator')->nullable();
             $table->integer('supplier_editor')->nullable();

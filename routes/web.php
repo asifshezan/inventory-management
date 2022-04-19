@@ -12,11 +12,11 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\TaxController;
+use App\Http\Controllers\BillerController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ContactController;
-
-
+use App\Http\Controllers\WareHouseController;
 
 //  User Controller
 Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
@@ -124,6 +124,26 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::get('tax/edit/{slug}', [TaxController::class, 'edit'])->name('tax.edit');
     Route::put('tax/{slug}', [TaxController::class, 'update'])->name('tax.update');
     Route::post('tax/soft-delete', [TaxController::class, 'softdelete'])->name('tax.softdelete');
+
+     // Tax Route
+
+    Route::get('biller', [BillerController::class, 'index'])->name('biller.index');
+    Route::get('biller/create', [BillerController::class, 'create'])->name('biller.create');
+    Route::post('biller', [BillerController::class, 'store'])->name('biller.store');
+    Route::get('biller/view/{slug}', [BillerController::class, 'view'])->name('biller.view');
+    Route::get('biller/edit/{slug}', [BillerController::class, 'edit'])->name('biller.edit');
+    Route::put('biller/{slug}', [BillerController::class, 'update'])->name('biller.update');
+    Route::post('biller/soft-delete', [BillerController::class, 'softdelete'])->name('biller.softdelete');
+
+    // WareHouse Route
+
+    Route::get('warehouse', [WareHouseController::class, 'index'])->name('warehouse.index');
+    Route::get('warehouse/create', [WareHouseController::class, 'create'])->name('warehouse.create');
+    Route::post('warehouse', [WareHouseController::class, 'store'])->name('warehouse.store');
+    Route::get('warehouse/view/{slug}', [WareHouseController::class, 'view'])->name('warehouse.view');
+    Route::get('warehouse/edit/{slug}', [WareHouseController::class, 'edit'])->name('warehouse.edit');
+    Route::put('warehouse/{slug}', [WareHouseController::class, 'update'])->name('warehouse.update');
+    Route::post('warehouse/soft-delete', [WareHouseController::class, 'softdelete'])->name('warehouse.softdelete');
 
     // Basic Info Route
 

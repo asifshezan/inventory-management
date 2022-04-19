@@ -415,8 +415,8 @@
                                     <li><a href="{{ route('user.create') }}">Add User</a></li>
                                     <li><a href="{{ route('customer.index') }}">Customer List</a></li>
                                     <li><a href="{{ route('customer.create') }}">Add Customer</a></li>
-                                    <li><a href="calendar.html">Biller List</a></li>
-                                    <li><a href="calendar.html">Add Biller</a></li>
+                                    <li><a href="{{ route('biller.index') }}">Biller List</a></li>
+                                    <li><a href="{{ route('biller.create') }}">Add Biller</a></li>
                                     <li><a href="{{ route('supplier.index') }}">Supplier List</a></li>
                                     <li><a href="{{ route('supplier.create') }}">Add Supplier</a></li>
                                 </ul>
@@ -459,7 +459,7 @@
                                     <li><a href="calendar.html">Discount Plan</a></li>
                                     <li><a href="calendar.html">Discout</a></li>
                                     <li><a href="calendar.html">Send Notification</a></li>
-                                    <li><a href="calendar.html">Warehouse</a></li>
+                                    <li><a href="{{ route('warehouse.index') }}">Warehouse</a></li>
                                     <li><a href="{{ route('cg.index') }}">Customer Group</a></li>
                                     <li><a href="{{ route('brand.index') }}">Brand</a></li>
                                     <li><a href="calendar.html">Unit</a></li>

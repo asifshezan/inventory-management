@@ -75,7 +75,7 @@
                                 @if( $data->supplier_image!='' )
                                 <img src="{{ asset('uploads/suppliers/' . $data->supplier_image) }}" height="40" width="40" class="img-fluid" alt="">
                                 @else
-                                <img src="{{ asset('uploads/avater.png') }}" height="50">
+                                <img src="{{ asset('uploads/default_user.png') }}" height="50">
                                 @endif
                             </div>
                             </div>
