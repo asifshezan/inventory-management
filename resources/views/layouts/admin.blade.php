@@ -398,7 +398,7 @@
                                     <span>HRM</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="calendar.html">Department</a></li>
+                                    <li><a href="{{ route('department.index') }}">Department</a></li>
                                     <li><a href="calendar.html">Employee</a></li>
                                     <li><a href="calendar.html">Attendance</a></li>
                                     <li><a href="calendar.html">Payroll</a></li>

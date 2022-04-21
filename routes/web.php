@@ -12,6 +12,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\TaxController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\BillerController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\SocialController;
@@ -144,6 +145,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::get('warehouse/edit/{slug}', [WareHouseController::class, 'edit'])->name('warehouse.edit');
     Route::put('warehouse/{slug}', [WareHouseController::class, 'update'])->name('warehouse.update');
     Route::post('warehouse/soft-delete', [WareHouseController::class, 'softdelete'])->name('warehouse.softdelete');
+
+    // Department Route
+
+    Route::get('department', [DepartmentController::class, 'index'])->name('department.index');
+    Route::get('department/create', [DepartmentController::class, 'create'])->name('department.create');
+    Route::post('department', [DepartmentController::class, 'store'])->name('department.store');
+    Route::get('department/view/{slug}', [DepartmentController::class, 'view'])->name('department.view');
+    Route::get('department/edit/{slug}', [DepartmentController::class, 'edit'])->name('department.edit');
+    Route::put('department/{slug}', [DepartmentController::class, 'update'])->name('department.update');
+    Route::post('department/soft-delete', [DepartmentController::class, 'softdelete'])->name('department.softdelete');
 
     // Basic Info Route
 
