@@ -463,7 +463,7 @@
                                     <li><a href="{{ route('cg.index') }}">Customer Group</a></li>
                                     <li><a href="{{ route('brand.index') }}">Brand</a></li>
                                     <li><a href="{{ route('purchase.unit.index') }}">Purchase Unit</a></li>
-                                    <li><a href="calendar.html">Sell Unit</a></li>
+                                    <li><a href="{{ route('sell.unit.index') }}">Sell Unit</a></li>
                                     <li><a href="calendar.html">Currency</a></li>
                                     <li><a href="{{ route('tax.index') }}">Tax</a></li>
                                     <li><a href="calendar.html">User Profile</a></li>

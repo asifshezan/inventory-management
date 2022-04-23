@@ -14,11 +14,11 @@ use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\TaxController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\BillerController;
-use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PurchaseUnitController;
+use App\Http\Controllers\SellUnitController;
 use App\Http\Controllers\WareHouseController;
 
 //  User Controller
@@ -167,6 +167,16 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::get('purchase-unit/edit/{slug}', [PurchaseUnitController::class, 'edit'])->name('purchase.unit.edit');
     Route::put('purchase-unit/{slug}', [PurchaseUnitController::class, 'update'])->name('purchase.unit.update');
     Route::post('purchase-unit/soft-delete', [PurchaseUnitController::class, 'softdelete'])->name('purchase.unit.softdelete');
+
+    // Sell Unit Route
+
+    Route::get('sell-unit', [SellUnitController::class, 'index'])->name('sell.unit.index');
+    Route::get('sell-unit/create', [SellUnitController::class, 'create'])->name('sell.unit.create');
+    Route::post('sell-unit', [SellUnitController::class, 'store'])->name('sell.unit.store');
+    Route::get('sell-unit/view/{slug}', [SellUnitController::class, 'view'])->name('sell.unit.view');
+    Route::get('sell-unit/edit/{slug}', [SellUnitController::class, 'edit'])->name('sell.unit.edit');
+    Route::put('sell-unit/{slug}', [SellUnitController::class, 'update'])->name('sell.unit.update');
+    Route::post('sell-unit/soft-delete', [SellUnitController::class, 'softdelete'])->name('sell.unit.softdelete');
 
     // Basic Info Route
 
